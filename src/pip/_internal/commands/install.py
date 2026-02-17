@@ -110,9 +110,9 @@ class InstallCommand(RequirementCommand):
             default=None,
             help=(
                 "Install packages into <dir>. "
-                "By default this will not replace existing files/folders in "
-                "<dir>. Use --upgrade to replace existing packages in <dir> "
-                "with new versions."
+                "This option is intended for installing into an empty directory. "
+                "It does not reliably uninstall or replace packages already present in "
+                "<dir>; to upgrade, remove the existing contents first."
             ),
         )
         cmdoptions.add_target_python_options(self.cmd_opts)

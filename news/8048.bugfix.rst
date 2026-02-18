@@ -1,0 +1,1 @@
+Fix vendored module aliasing for debundled installs by ensuring submodules used by pip are also aliased.

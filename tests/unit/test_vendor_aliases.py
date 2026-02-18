@@ -3,8 +3,9 @@ from __future__ import annotations
 import pathlib
 import re
 
-
-IMPORT_RE = re.compile(r"^\s*(?:from|import)\s+pip\._vendor(?P<rest>(?:\.[A-Za-z0-9_]+)*)")
+IMPORT_RE = re.compile(
+    r"^\s*(?:from|import)\s+pip\._vendor(?P<rest>(?:\.[A-Za-z0-9_]+)*)"
+)
 VENDORED_RE = re.compile(r'vendored\("([^"]+)"\)')
 
 
@@ -33,4 +34,6 @@ def test_all_pip_vendor_imports_are_listed_in_vendored() -> None:
 
     # 3) enforce: every import has a vendored("...") entry
     missing = sorted(imports - vendored)
-    assert missing == [], "Missing vendored() entries for:\n  - " + "\n  - ".join(missing)
+    assert missing == [], "Missing vendored() entries for:\n  - " + "\n  - ".join(
+        missing
+    )

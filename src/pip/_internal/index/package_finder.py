@@ -1037,7 +1037,7 @@ class PackageFinder:
                 _format_versions(best_candidate_result.all_candidates),
             )
 
-            raise DistributionNotFound(f"No matching distribution found for {req}")
+            raise DistributionNotFound(f"No matching distribution found for {name}")
 
         def _should_install_candidate(
             candidate: InstallationCandidate | None,

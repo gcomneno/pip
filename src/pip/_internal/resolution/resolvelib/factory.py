@@ -720,7 +720,7 @@ class Factory:
                 "requirements.txt"
             )
 
-        return DistributionNotFound(f"No matching distribution found for {req}")
+        return DistributionNotFound(f"No matching distribution found for {req.project_name}")
 
     def _has_any_candidates(self, project_name: str) -> bool:
         """

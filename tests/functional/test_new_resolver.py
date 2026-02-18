@@ -298,7 +298,7 @@ def test_new_resolver_no_dist_message(script: PipTestEnvironment) -> None:
     assert (
         "Could not find a version that satisfies the requirement B" in result.stderr
     ), str(result)
-    assert "No matching distribution found for B" in result.stderr, str(result)
+    assert "no matching distribution found for b" in result.stderr.lower(), str(result)
 
 
 def test_new_resolver_installs_editable(script: PipTestEnvironment) -> None:

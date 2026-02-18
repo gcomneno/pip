@@ -58,20 +58,54 @@ if DEBUNDLED:
     sys.path[:] = glob.glob(os.path.join(WHEEL_DIR, "*.whl")) + sys.path
 
     # Actually alias all of our vendored dependencies.
+
+    # cachecontrol
     vendored("cachecontrol")
+    vendored("cachecontrol.cache")
+    vendored("cachecontrol.caches")
+
+    # certifi
     vendored("certifi")
-    vendored("dependency-groups")
+
+    # dependency-groups
+    vendored("dependency_groups")
+
+    # distlib
     vendored("distlib")
+    vendored("distlib.scripts")
+    vendored("distlib.util")
+
+    # distro
     vendored("distro")
+
+    # packaging
     vendored("packaging")
-    vendored("packaging.version")
+    vendored("packaging.markers")
+    vendored("packaging.pylock")
+    vendored("packaging.requirements")
     vendored("packaging.specifiers")
+    vendored("packaging.tags")
+    vendored("packaging.utils")
+    vendored("packaging.version")
+
+    # pkg_resources
     vendored("pkg_resources")
+
+    # platformdirs
     vendored("platformdirs")
+
+    # progress
     vendored("progress")
+
+    # pyproject_hooks
     vendored("pyproject_hooks")
+
+    # requests
     vendored("requests")
+    vendored("requests.adapters")
+    vendored("requests.auth")
     vendored("requests.exceptions")
+    vendored("requests.models")
     vendored("requests.packages")
     vendored("requests.packages.urllib3")
     vendored("requests.packages.urllib3._collections")
@@ -87,8 +121,7 @@ if DEBUNDLED:
     vendored("requests.packages.urllib3.packages.ordered_dict")
     vendored("requests.packages.urllib3.packages.six")
     vendored("requests.packages.urllib3.packages.ssl_match_hostname")
-    vendored("requests.packages.urllib3.packages.ssl_match_hostname."
-             "_implementation")
+    vendored("requests.packages.urllib3.packages.ssl_match_hostname._implementation")
     vendored("requests.packages.urllib3.poolmanager")
     vendored("requests.packages.urllib3.request")
     vendored("requests.packages.urllib3.response")
@@ -100,18 +133,42 @@ if DEBUNDLED:
     vendored("requests.packages.urllib3.util.ssl_")
     vendored("requests.packages.urllib3.util.timeout")
     vendored("requests.packages.urllib3.util.url")
+    vendored("requests.structures")
+    vendored("requests.utils")
+
+    # resolvelib
     vendored("resolvelib")
+    vendored("resolvelib.providers")
+    vendored("resolvelib.reporters")
+    vendored("resolvelib.resolvers")
+    vendored("resolvelib.structs")
+
+    # rich
     vendored("rich")
     vendored("rich.console")
     vendored("rich.highlighter")
+    vendored("rich.live")
     vendored("rich.logging")
     vendored("rich.markup")
+    vendored("rich.measure")
     vendored("rich.progress")
     vendored("rich.segment")
     vendored("rich.style")
     vendored("rich.text")
+    vendored("rich.theme")
     vendored("rich.traceback")
+
+    # tomli (py<3.11 only)
     if sys.version_info < (3, 11):
         vendored("tomli")
+
+    # truststore
     vendored("truststore")
+
+    # urllib3
     vendored("urllib3")
+    vendored("urllib3._collections")
+    vendored("urllib3.connectionpool")
+    vendored("urllib3.exceptions")
+    vendored("urllib3.poolmanager")
+    vendored("urllib3.util")

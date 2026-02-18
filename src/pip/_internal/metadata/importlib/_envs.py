@@ -54,6 +54,7 @@ class _DistributionFinder:
 
     def __init__(self) -> None:
         self._found_names: set[NormalizedName] = set()
+        self._warned_bad_metadata: set[BasePath | None] = set()
 
     def _find_impl(self, location: str) -> Iterator[FoundResult]:
         """Find distributions in a location."""
@@ -69,7 +70,9 @@ class _DistributionFinder:
             try:
                 name = get_dist_canonical_name(dist)
             except BadMetadata as e:
-                logger.warning("Skipping %s due to %s", info_location, e.reason)
+                if info_location not in self._warned_bad_metadata:
+                    logger.warning("Skipping %s due to %s", info_location, e.reason)
+                    self._warned_bad_metadata.add(info_location)
                 continue
             if name in self._found_names:
                 continue

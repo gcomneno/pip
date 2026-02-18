@@ -882,6 +882,18 @@ explained in the python documentation for the `site.USER_BASE
 This mode of installation can be turned on by specifying the :ref:`--user
 <install_--user>` option to ``pip install``.
 
+If you want to disable user installs (including the automatic fallback when system site-packages is not writeable), you can configure pip globally:
+
+.. code-block:: shell
+
+   pip config set global.user false
+
+Or for a single invocation, set the environment variable:
+
+.. code-block:: shell
+
+   PIP_USER=0 python -m pip install SomePackage
+
 Moreover, the "user scheme" can be customized by setting the
 ``PYTHONUSERBASE`` environment variable, which updates the value of
 ``site.USER_BASE``.

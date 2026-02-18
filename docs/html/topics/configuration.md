@@ -226,6 +226,10 @@ Environment variables set to an empty string (like with `export X=` on Unix) wil
 Use `no`, `false` or `0` instead.
 ```
 
+Examples:
+
+- `PIP_USER=0` disables user installs (equivalent to setting `global.user = false` in a config file).
+
 ## Precedence / Override order
 
 Command line options override environment variables, which override the

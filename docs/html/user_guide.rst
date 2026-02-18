@@ -743,7 +743,10 @@ To setup for bash::
 
 To setup for zsh::
 
-    python -m pip completion --zsh >> ~/.zprofile
+    python -m pip completion --zsh >> ~/.zshrc
+
+    # Requires zsh completion (compinit) to be enabled.
+
 
 To setup for fish::
 
